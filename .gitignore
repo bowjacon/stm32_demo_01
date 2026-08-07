@@ -1,0 +1,18 @@
+# Build artifacts
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# STM32CubeIDE / Eclipse
+Debug/
+Release/
+*.launch
+
+# Misc
+*.o
+*.elf
+*.hex
+*.bin
