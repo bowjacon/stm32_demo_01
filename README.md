@@ -1,4 +1,4 @@
-# stm32_demo01
+# stm32_demo_01
 
 A breathing LED (LED breathing effect) demo for **STM32F103RCT6**, built with the **STM32 HAL library** and **FreeRTOS**.
 
@@ -26,7 +26,7 @@ The LED brightness fades in and out smoothly using a hardware PWM output, while 
 ## Project Structure
 
 ```
-stm32_breathe/
+stm32_demo_01/
 ├── CMakeLists.txt                       # Top-level CMake project (official template style)
 ├── cmake/
 │   ├── gcc-arm-none-eabi.cmake          # GNU ARM toolchain file
@@ -68,7 +68,7 @@ sudo apt install cmake gcc-arm-none-eabi
 ```bash
 # 1) Configure (specify the GNU ARM toolchain file)
 cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake
-# 2) Build (produces build/BREATH.elf, build/BREATH.hex and build/BREATH.bin)
+# 2) Build (produces build/stm32_demo_01.elf, build/stm32_demo_01.hex and build/stm32_demo_01.bin)
 cmake --build build
 # 3) Clean and rebuild (optional)
 cmake --build build --target clean
@@ -77,22 +77,22 @@ cmake --build build
 
 Output artifacts are generated in `build/`:
 
-| File             | Description                          |
-| ---------------- | ------------------------------------ |
-| `BREATH.elf`     | ELF executable (for debuggers)       |
-| `BREATH.bin`     | Raw binary image (flash at 0x08000000) |
-| `BREATH.hex`     | Intel HEX file                       |
+| File                   | Description                          |
+| ---------------------- | ------------------------------------ |
+| `stm32_demo_01.elf`    | ELF executable (for debuggers)       |
+| `stm32_demo_01.bin`    | Raw binary image (flash at 0x08000000) |
+| `stm32_demo_01.hex`    | Intel HEX file                       |
 
 A typical build prints the memory usage:
 
 ```
    text	   data	    bss	    dec	    hex	filename
-   8700	     16	   5496	  14212	   3784	build/BREATH.elf
+   8700	     16	   5496	  14212	   3784	build/stm32_demo_01.elf
 ```
 
 ## Flash
 
-Flash `build/BREATH.bin` to address `0x08000000` using your preferred tool
+Flash `build/stm32_demo_01.bin` to address `0x08000000` using your preferred tool
 (e.g. ST-Link utilities, STM32CubeProgrammer, openOCD, etc.).
 
 ## Configuration
