@@ -57,10 +57,21 @@ stm32_breathe/
 - GNU ARM Embedded Toolchain (`arm-none-eabi-gcc`) on your `PATH`
 - A make/ninja build tool (make is used below)
 
+On Debian/Ubuntu, install the tools with:
+
+```bash
+sudo apt install cmake gcc-arm-none-eabi
+```
+
 ## Build
 
 ```bash
+# 1) Configure (specify the GNU ARM toolchain file)
 cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake
+# 2) Build (produces build/BREATH.elf, build/BREATH.hex and build/BREATH.bin)
+cmake --build build
+# 3) Clean and rebuild (optional)
+cmake --build build --target clean
 cmake --build build
 ```
 
